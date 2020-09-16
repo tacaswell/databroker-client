@@ -43,7 +43,7 @@ class RunsPage extends React.Component<Props, IState> {
                 <ul>
                     {this.state.catalogs.map(catalog => (
                         <li key={catalog.uid}>
-                            <Link color="inherit" component={RouterLink} to={"/runs/" + this.props.match.params.id + "/" + catalog.uid}>{catalog.uid}</Link>
+                            <Link color="inherit" component={RouterLink} to={"/db/runs/" + this.props.match.params.id + "/" + catalog.uid}>{catalog.uid}</Link>
                         </li>
                     ))}
                 </ul>
@@ -55,7 +55,7 @@ class RunsPage extends React.Component<Props, IState> {
     }
 
     componentDidMount() {
-        var catalogUrl = "/runs/" + this.props.match.params.id;
+        var catalogUrl = "/db/runs/" + this.props.match.params.id;
         fetch(catalogUrl)
             .then(res => res.json())
             .then((data) => {
